@@ -2,12 +2,14 @@
 
 function feetToMile(feet){
     var mile = feet/5280;
+    var mile = mile.toFixed(2);
+    var mile = Math.abs(mile);
     return mile;
 }
 
 var distence1 = feetToMile(10560);
 console.log(distence1);
-var distence2 = feetToMile(50145);
+var distence2 = feetToMile(-50145);
 console.log(distence2);
 
 //Problem 2- wood calculator
@@ -57,12 +59,12 @@ function woodCalculator(chair, table, bed){
  function tinyFriend(name) {
     var tiny = name[0];
     for (var i = 1; i < name.length; i++) {
-        if (name[i].length < tiny.length) {
+        if (name[i].length < tiny.length && name[i] != " ") {
             tiny = name[i];
         }
     }
     return tiny;
 }
 
-var name = ["Tushar", "Mohshin", "Sajjad", "Saiful", "Arif", "Robel", "Hasan",];
+var name = ["Tushar", "Mohshin", " ", "Sajjad", " ", "Saiful", "Arif", "Robel", "Hasan",];
 console.log(tinyFriend(name));
